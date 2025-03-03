@@ -59,7 +59,7 @@ class SqlHelper {
     static Future<void> deleteTask(int id) async {
       final db = await SqlHelper.db();
       try{
-        await db.delete("table", where: "id=?", whereArgs: [id]);
+        await db.delete("tasks", where: "id=?", whereArgs: [id]);
       }catch(err) {
         debugPrint("เกิดข้อผิดพลาดบางประการในขณะลบข้อมูล....: $err");
       }
